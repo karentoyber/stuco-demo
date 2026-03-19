@@ -190,7 +190,7 @@ export function VerifyScreen({ email, onVerify, onBack, language }: VerifyScreen
 
             {/* Hint for demo */}
             <div className="mt-auto pt-8">
-              <p className="text-[10px] text-muted-foreground text-center bg-secondary/50 px-4 py-2 rounded-lg">
+              <p className="text-xs text-muted-foreground text-center bg-secondary/50 px-4 py-2 rounded-lg">
                 {t("demoHint", language)}
               </p>
             </div>

@@ -181,7 +181,7 @@ export function HomeScreen({ onTripClick, onNavigateToMatch, userName, language 
               <span className="text-xs font-semibold text-foreground whitespace-nowrap">
                 {school.name}
               </span>
-              <span className="text-[10px] text-muted-foreground">
+              <span className="text-[11px] text-muted-foreground">
                 {school.trips} {t("trips", language).toLowerCase()}
               </span>
             </button>
@@ -218,7 +218,7 @@ export function HomeScreen({ onTripClick, onNavigateToMatch, userName, language 
                 <p className="text-sm font-bold text-white">
                   {language === "en" ? dest.name : dest.nameZh}
                 </p>
-                <p className="text-[10px] text-white/80">
+                <p className="text-[11px] text-white/80">
                   {dest.trips} {language === "en" ? "active trips" : "个活跃旅程"}
                 </p>
               </div>

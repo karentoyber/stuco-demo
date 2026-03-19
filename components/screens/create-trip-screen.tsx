@@ -68,7 +68,7 @@ export function CreateTripScreen({ onBack, language }: CreateTripScreenProps) {
                 }`}
               >
                 <opt.icon className="w-4 h-4" />
-                <span className="text-[10px] font-semibold">{opt.label}</span>
+                <span className="text-[11px] font-semibold">{opt.label}</span>
               </button>
             ))}
           </div>

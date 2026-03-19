@@ -195,7 +195,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                     <h3 className="text-sm font-bold text-foreground truncate pr-2">
                       {language === "en" ? chat.tripName : chat.tripNameZh}
                     </h3>
-                    <span className="text-[10px] text-muted-foreground flex-shrink-0">
+                    <span className="text-xs text-muted-foreground flex-shrink-0">
                       {language === "en" ? chat.timestamp : chat.timestampZh}
                     </span>
                   </div>
@@ -207,7 +207,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                       {language === "en" ? chat.lastMessage : chat.lastMessageZh}
                     </p>
                     {chat.unread > 0 && (
-                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
                         {chat.unread}
                       </span>
                     )}
@@ -232,7 +232,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
       <div className="flex items-center gap-3 px-4 py-3 bg-card border-b border-border">
         <button
           onClick={() => setSelectedChat(null)}
-          className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center"
+          className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"
           aria-label={t("back", language)}
         >
           <ArrowLeft className="w-4 h-4 text-foreground" />
@@ -250,7 +250,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
           <h2 className="text-sm font-bold text-foreground truncate">
             {language === "en" ? currentChat?.tripName : currentChat?.tripNameZh}
           </h2>
-          <p className="text-[10px] text-muted-foreground">
+          <p className="text-xs text-muted-foreground">
             {currentChat?.members} {t("members", language)}
           </p>
         </div>
@@ -289,7 +289,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
             )}
             <div className={`max-w-[75%] ${msg.isMe ? "items-end" : ""}`}>
               {!msg.isMe && (
-                <p className="text-[10px] text-muted-foreground mb-0.5 ml-1">{msg.sender}</p>
+                <p className="text-xs text-muted-foreground mb-0.5 ml-1">{msg.sender}</p>
               )}
               <div
                 className={`px-3 py-2 rounded-2xl ${
@@ -302,7 +302,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                   {language === "en" ? msg.message : msg.messageZh}
                 </p>
               </div>
-              <p className={`text-[9px] text-muted-foreground mt-0.5 ${msg.isMe ? "text-right mr-1" : "ml-1"}`}>
+              <p className={`text-xs text-muted-foreground mt-0.5 ${msg.isMe ? "text-right mr-1" : "ml-1"}`}>
                 {msg.timestamp}
               </p>
             </div>
@@ -313,7 +313,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
       {/* Message Input */}
       <div className="px-4 py-3 bg-card border-t border-border">
         <div className="flex items-center gap-2">
-          <button className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <button className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
             <ImageIcon className="w-4 h-4 text-muted-foreground" />
           </button>
           <div className="flex-1 bg-secondary rounded-2xl px-4 py-2.5">
@@ -328,7 +328,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
           </div>
           <button
             onClick={handleSendMessage}
-            className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0"
+            className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0"
             aria-label={language === "en" ? "Send message" : "发送消息"}
           >
             <Send className="w-4 h-4 text-primary-foreground" />

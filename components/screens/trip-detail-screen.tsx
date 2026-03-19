@@ -217,7 +217,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
               <span className="text-lg font-bold text-accent block leading-none">
                 {trip.dates.split(" ")[1]}
               </span>
-              <span className="text-[10px] text-accent/80">{trip.dates.split(" ")[0]}</span>
+              <span className="text-[11px] text-accent/80">{trip.dates.split(" ")[0]}</span>
             </div>
           </div>
 
@@ -238,7 +238,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <Calendar className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-[11px] text-muted-foreground">
                     {language === "en" ? "Duration" : "时长"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -251,7 +251,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <Users className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-[11px] text-muted-foreground">
                     {language === "en" ? "Group Size" : "团队规模"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -264,7 +264,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <DollarSign className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-[11px] text-muted-foreground">
                     {language === "en" ? "Per Person" : "每人"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">{trip.pricePerPerson}</p>
@@ -275,7 +275,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-[11px] text-muted-foreground">
                     {language === "en" ? "Transport" : "交通"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -291,7 +291,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
             {(language === "en" ? trip.tags : trip.tagsZh).map((tag) => (
               <span
                 key={tag}
-                className="text-[10px] bg-primary/10 text-primary font-semibold px-3 py-1 rounded-full"
+                className="text-[11px] bg-primary/10 text-primary font-semibold px-3 py-1 rounded-full"
               >
                 {tag}
               </span>
@@ -353,7 +353,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
               <p className="text-[11px] text-muted-foreground">{trip.captain.school}</p>
             </div>
             {trip.isUserCaptain && (
-              <span className="text-[10px] bg-accent text-accent-foreground font-semibold px-2 py-1 rounded-full">
+              <span className="text-[11px] bg-accent text-accent-foreground font-semibold px-2 py-1 rounded-full">
                 {language === "en" ? "You" : "你"}
               </span>
             )}
@@ -384,10 +384,10 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                 </div>
                 <div className="flex-1">
                   <p className="text-xs font-semibold text-foreground">{member.name}</p>
-                  <p className="text-[10px] text-muted-foreground">{member.school}</p>
+                  <p className="text-[11px] text-muted-foreground">{member.school}</p>
                 </div>
                 {member.status === "pending" ? (
-                  <span className="text-[10px] bg-accent/10 text-accent font-semibold px-2 py-1 rounded-full">
+                  <span className="text-[11px] bg-accent/10 text-accent font-semibold px-2 py-1 rounded-full">
                     {t("pending", language)}
                   </span>
                 ) : (
@@ -466,7 +466,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
       {/* Captain Management Modal */}
       {showManageModal && (
         <div className="fixed inset-0 bg-foreground/50 flex items-end justify-center z-50">
-          <div className="bg-card w-full max-w-[393px] rounded-t-3xl p-5 pb-8">
+          <div className="bg-card w-full max-w-[393px] rounded-t-3xl p-5 pb-[calc(32px+env(safe-area-inset-bottom))] max-h-[calc(100vh-64px)] overflow-y-auto">
             <div className="w-12 h-1 bg-muted rounded-full mx-auto mb-4" />
             <h2 className="text-lg font-bold text-foreground mb-4">{t("manageTrip", language)}</h2>
             

@@ -315,7 +315,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
                           }}
                         />
                       </div>
-                      <span className="text-[10px] text-muted-foreground min-w-[60px] text-right">
+                      <span className="text-xs text-muted-foreground min-w-[60px] text-right">
                         ${member.paid}/${member.total}
                       </span>
                     </div>
@@ -352,7 +352,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
               {t("recentTransactions", language)}
             </h2>
             <button 
-              className="w-7 h-7 rounded-full bg-primary flex items-center justify-center" 
+              className="w-9 h-9 rounded-full bg-primary flex items-center justify-center" 
               aria-label={t("addExpense", language)}
             >
               <Plus className="w-3.5 h-3.5 text-primary-foreground" />
@@ -380,7 +380,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
                   <p className="text-xs font-semibold text-foreground">
                     {language === "en" ? expense.title : expense.titleZh}
                   </p>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     {expense.paidBy} &middot; {language === "en" ? expense.date : expense.dateZh}
                   </p>
                 </div>

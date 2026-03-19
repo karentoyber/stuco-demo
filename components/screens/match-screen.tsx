@@ -352,13 +352,13 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                     <span className="text-xs font-bold text-primary">{topMatch.captain.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-[10px] text-muted-foreground">{t("captain", language)}</p>
+                    <p className="text-[11px] text-muted-foreground">{t("captain", language)}</p>
                     <p className="text-xs font-semibold text-foreground">{topMatch.captain.name}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-lg font-bold text-accent">{topMatch.price}</p>
-                  <p className="text-[10px] text-muted-foreground">
+                  <p className="text-[11px] text-muted-foreground">
                     {topMatch.spots} {t("spotsAvailable", language)}
                   </p>
                 </div>
@@ -367,7 +367,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                 {(language === "en" ? topMatch.tags : topMatch.tagsZh).map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded-full"
+                    className="text-[11px] bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded-full"
                   >
                     {tag}
                   </span>
@@ -379,7 +379,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
           <div className="px-4 pb-4">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span className="text-[10px] text-accent font-medium">
+              <span className="text-[11px] text-accent font-medium">
                 {t("firstComeFirstServe", language)}
               </span>
             </div>
@@ -414,7 +414,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                   loading={index === 0 ? "eager" : "lazy"}
                   className="object-cover"
                 />
-                <div className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full">
+                <div className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-[11px] font-bold px-2 py-0.5 rounded-full">
                   {trip.matchScore}%
                 </div>
               </div>
@@ -430,9 +430,9 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                 </div>
                 <div className="flex items-center gap-2 mt-1.5">
                   <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-[9px] font-bold text-primary">{trip.captain.avatar}</span>
+                    <span className="text-[11px] font-bold text-primary">{trip.captain.avatar}</span>
                   </div>
-                  <span className="text-[10px] text-muted-foreground">
+                  <span className="text-[11px] text-muted-foreground">
                     {t("captain", language)}: {trip.captain.name}
                   </span>
                 </div>
@@ -440,7 +440,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                   <span className="text-xs font-bold text-accent">
                     {trip.price}/{language === "en" ? "person" : "人"}
                   </span>
-                  <span className="text-[10px] text-muted-foreground">
+                  <span className="text-[11px] text-muted-foreground">
                     {trip.spots} {t("spots", language)}
                   </span>
                 </div>

@@ -231,7 +231,7 @@ export function SignupScreen({ onSubmit, language }: SignupScreenProps) {
         </div>
 
         {/* Terms */}
-        <p className="text-[10px] text-muted-foreground text-center px-4">
+        <p className="text-xs text-muted-foreground text-center px-4">
           {t("termsText", language)}
         </p>
 
