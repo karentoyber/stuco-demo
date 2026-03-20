@@ -6,18 +6,19 @@ import { useState } from "react"
 import { type Language, t } from "@/lib/translations"
 
 const NEARBY_SCHOOLS = [
-  { name: "Stanford", distance: "2 mi", trips: 12 },
-  { name: "UC Berkeley", distance: "15 mi", trips: 8 },
-  { name: "San Jose State", distance: "8 mi", trips: 15 },
-  { name: "Santa Clara U", distance: "5 mi", trips: 6 },
+  { name: "NYU Shanghai", nameZh: "上纽", distance: "0 km", trips: 24 },
+  { name: "Fudan", nameZh: "复旦", distance: "8 km", trips: 18 },
+  { name: "SJTU", nameZh: "交大", distance: "12 km", trips: 15 },
+  { name: "Tongji", nameZh: "同济", distance: "6 km", trips: 12 },
+  { name: "DKU", nameZh: "昆杜", distance: "50 km", trips: 8 },
 ]
 
 const UPCOMING_TRIPS = [
   {
     id: "1",
-    title: "Yellowstone Adventure",
-    titleZh: "黄石公园探险",
-    image: "/images/trip-lakeside.jpg",
+    title: "Zhangjiajie National Park",
+    titleZh: "张家界国家森林公园",
+    image: "/images/trip-mountain.jpg",
     dates: "Jun 15-20",
     datesZh: "6月15-20日",
     daysUntil: 12,
@@ -26,9 +27,10 @@ const UPCOMING_TRIPS = [
 ]
 
 const TRENDING_DESTINATIONS = [
-  { name: "Yosemite", nameZh: "优胜美地", trips: 24, image: "/images/trip-mountain.jpg" },
-  { name: "Big Sur", nameZh: "大苏尔", trips: 18, image: "/images/trip-beach.jpg" },
-  { name: "Lake Tahoe", nameZh: "太浩湖", trips: 15, image: "/images/trip-forest.jpg" },
+  { name: "Hangzhou", nameZh: "杭州", trips: 32, image: "/images/trip-lakeside.jpg" },
+  { name: "Tokyo", nameZh: "东京", trips: 28, image: "/images/trip-city.jpg" },
+  { name: "Bali", nameZh: "巴厘岛", trips: 24, image: "/images/trip-beach.jpg" },
+  { name: "Guilin", nameZh: "桂林", trips: 18, image: "/images/trip-mountain.jpg" },
 ]
 
 interface HomeScreenProps {
@@ -179,9 +181,9 @@ export function HomeScreen({ onTripClick, onNavigateToMatch, userName, language 
                 </span>
               </div>
               <span className="text-xs font-semibold text-foreground whitespace-nowrap">
-                {school.name}
+                {language === "en" ? school.name : school.nameZh}
               </span>
-              <span className="text-[11px] text-muted-foreground">
+              <span className="text-[10px] text-muted-foreground">
                 {school.trips} {t("trips", language).toLowerCase()}
               </span>
             </button>
@@ -218,7 +220,7 @@ export function HomeScreen({ onTripClick, onNavigateToMatch, userName, language 
                 <p className="text-sm font-bold text-white">
                   {language === "en" ? dest.name : dest.nameZh}
                 </p>
-                <p className="text-[11px] text-white/80">
+                <p className="text-[10px] text-white/80">
                   {dest.trips} {language === "en" ? "active trips" : "个活跃旅程"}
                 </p>
               </div>

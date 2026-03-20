@@ -28,110 +28,110 @@ const TRIP_DATA: Record<string, {
   isUserMember?: boolean
 }> = {
   "1": {
-    title: "Yellowstone Adventure",
-    titleZh: "黄石公园探险",
-    location: "Yellowstone National Park, Wyoming",
-    locationZh: "怀俄明州黄石国家公园",
-    image: "/images/trip-lakeside.jpg",
+    title: "Zhangjiajie Avatar Mountains",
+    titleZh: "张家界阿凡达仙境",
+    location: "Zhangjiajie, Hunan Province",
+    locationZh: "湖南省张家界市",
+    image: "/images/trip-mountain.jpg",
     description:
-      "Explore Yellowstone and beyond! Get your feet wet and your hands dirty, while you explore the geysers, hot springs, and wildlife of America's first national park.",
+      "Explore the stunning floating mountains that inspired Avatar! Hike the glass skywalks, ride cable cars through mist-covered peaks, and camp under the stars in China's most magical landscape.",
     descriptionZh:
-      "探索黄石公园及更多！弄湿你的脚，弄脏你的手，同时探索美国第一个国家公园的间歇泉、温泉和野生动物。",
+      "探索启发《阿凡达》电影的壮观悬浮山脉！徒步玻璃栈道，乘坐缆车穿越云雾缭绕的山峰，在中国最神奇的风景中露营观星。",
     dates: "Jun 15 - Jun 20",
     datesZh: "6月15日 - 6月20日",
     duration: "5 Days",
     durationZh: "5天",
     groupSize: "6-8 Students",
     groupSizeZh: "6-8名学生",
-    pricePerPerson: "$280",
-    tags: ["Camping", "Hiking", "Wildlife"],
-    tagsZh: ["露营", "徒步", "野生动物"],
-    captain: { name: "Sarah K.", school: "Stanford", avatar: "S" },
+    pricePerPerson: "¥1,800",
+    tags: ["Hiking", "Photography", "Adventure"],
+    tagsZh: ["徒步", "摄影", "探险"],
+    captain: { name: "Lily Z.", school: "NYU Shanghai", avatar: "L" },
     members: [
-      { name: "Mike R.", school: "UC Berkeley", avatar: "M", status: "confirmed" },
-      { name: "Jess T.", school: "San Jose State", avatar: "J", status: "confirmed" },
-      { name: "Alex W.", school: "Santa Clara U", avatar: "A", status: "confirmed" },
-      { name: "Taylor L.", school: "Stanford", avatar: "T", status: "pending" },
+      { name: "Kevin C.", school: "Fudan University", avatar: "K", status: "confirmed" },
+      { name: "Sophie L.", school: "SJTU", avatar: "S", status: "confirmed" },
+      { name: "Emma W.", school: "Tongji University", avatar: "E", status: "confirmed" },
+      { name: "Jason H.", school: "NYU Shanghai", avatar: "J", status: "pending" },
     ],
     isUserCaptain: true,
     isUserMember: true,
   },
   "2": {
-    title: "Mountain Ridge Trek",
-    titleZh: "山脊徒步",
-    location: "Rocky Mountain National Park, Colorado",
-    locationZh: "科罗拉多州落基山国家公园",
-    image: "/images/trip-mountain.jpg",
+    title: "Tokyo & Mt. Fuji Explorer",
+    titleZh: "东京富士山探索",
+    location: "Tokyo & Hakone, Japan",
+    locationZh: "日本东京&箱根",
+    image: "/images/trip-city.jpg",
     description:
-      "Challenge yourself on stunning alpine trails with breathtaking views of the Continental Divide. Perfect for students who love hiking and photography.",
+      "Experience the best of Japan! Explore vibrant Tokyo, soak in traditional onsen hot springs in Hakone, and witness the majestic Mt. Fuji at sunrise.",
     descriptionZh:
-      "在令人惊叹的高山步道上挑战自己，欣赏大陆分水岭的壮丽景色。非常适合喜欢徒步和摄影的学生。",
-    dates: "Jul 4 - Jul 8",
-    datesZh: "7月4日 - 7月8日",
-    duration: "4 Days",
-    durationZh: "4天",
+      "体验日本的精华！探索繁华的东京，在箱根体验传统温泉，在日出时欣赏壮丽的富士山。",
+    dates: "Jul 4 - Jul 10",
+    datesZh: "7月4日 - 7月10日",
+    duration: "6 Days",
+    durationZh: "6天",
     groupSize: "5-10 Students",
     groupSizeZh: "5-10名学生",
-    pricePerPerson: "$195",
-    tags: ["Hiking", "Photography", "Mountain"],
-    tagsZh: ["徒步", "摄影", "山区"],
-    captain: { name: "Alex W.", school: "Santa Clara U", avatar: "A" },
+    pricePerPerson: "¥5,500",
+    tags: ["City", "Culture", "Mountain"],
+    tagsZh: ["城市", "文化", "山区"],
+    captain: { name: "Kevin C.", school: "Fudan University", avatar: "K" },
     members: [
-      { name: "Taylor L.", school: "Stanford", avatar: "T", status: "confirmed" },
+      { name: "Amy L.", school: "NYU Shanghai", avatar: "A", status: "confirmed" },
     ],
     isUserCaptain: false,
     isUserMember: false,
   },
   "3": {
-    title: "Beach Bonfire Weekend",
-    titleZh: "海滩篝火周末",
-    location: "Santa Cruz, California",
-    locationZh: "加州圣克鲁斯",
+    title: "Bali Beach Retreat",
+    titleZh: "巴厘岛海滩度假",
+    location: "Bali, Indonesia",
+    locationZh: "印度尼西亚巴厘岛",
     image: "/images/trip-beach.jpg",
     description:
-      "Sun, sand, and surf await! Spend a laid-back weekend at Santa Cruz with bonfires, surfing lessons, and a boardwalk adventure.",
+      "Escape to paradise! Surf the legendary waves, explore ancient temples, watch stunning sunsets, and experience the vibrant nightlife of Bali.",
     descriptionZh:
-      "阳光、沙滩和冲浪等着你！在圣克鲁斯度过一个轻松的周末，有篝火、冲浪课程和木板道探险。",
-    dates: "Aug 10 - Aug 12",
-    datesZh: "8月10日 - 8月12日",
-    duration: "2 Days",
-    durationZh: "2天",
+      "逃离到天堂！冲浪传奇海浪，探索古老寺庙，观赏迷人日落，体验巴厘岛充满活力的夜生活。",
+    dates: "Aug 10 - Aug 16",
+    datesZh: "8月10日 - 8月16日",
+    duration: "6 Days",
+    durationZh: "6天",
     groupSize: "8-12 Students",
     groupSizeZh: "8-12名学生",
-    pricePerPerson: "$150",
-    tags: ["Beach", "Surfing", "Bonfire"],
-    tagsZh: ["海滩", "冲浪", "篝火"],
-    captain: { name: "Jordan P.", school: "UC Berkeley", avatar: "J" },
+    pricePerPerson: "¥4,200",
+    tags: ["Beach", "Surfing", "Culture"],
+    tagsZh: ["海滩", "冲浪", "文化"],
+    captain: { name: "Sophie L.", school: "SJTU", avatar: "S" },
     members: [
-      { name: "Casey M.", school: "Stanford", avatar: "C", status: "confirmed" },
-      { name: "Riley D.", school: "San Jose State", avatar: "R", status: "confirmed" },
-      { name: "Morgan S.", school: "Santa Clara U", avatar: "M", status: "confirmed" },
+      { name: "Mike W.", school: "NYU Shanghai", avatar: "M", status: "confirmed" },
+      { name: "Rachel T.", school: "Fudan University", avatar: "R", status: "confirmed" },
+      { name: "David K.", school: "Tongji University", avatar: "D", status: "confirmed" },
     ],
     isUserCaptain: false,
     isUserMember: false,
   },
   "4": {
-    title: "Forest Retreat Camp",
-    titleZh: "森林露营",
-    location: "Redwood National Park, California",
-    locationZh: "加州红杉国家公园",
-    image: "/images/trip-forest.jpg",
+    title: "Hangzhou West Lake & Tea",
+    titleZh: "杭州西湖茶文化之旅",
+    location: "Hangzhou, Zhejiang Province",
+    locationZh: "浙江省杭州市",
+    image: "/images/trip-lakeside.jpg",
     description:
-      "Disconnect and recharge among the tallest trees on Earth. Hammock camping, stargazing, and peaceful hikes through ancient groves.",
+      "Discover the poetic beauty of Hangzhou! Bike around West Lake, visit Longjing tea plantations, explore ancient pagodas, and taste authentic Hangzhou cuisine.",
     descriptionZh:
-      "在地球上最高的树木中断开连接并充电。吊床露营、观星和穿越古老树林的宁静徒步。",
-    dates: "Sep 1 - Sep 4",
-    datesZh: "9月1日 - 9月4日",
+      "发现杭州的诗意之美！环西湖骑行，参观龙井茶园，探索古塔，品尝正宗杭州美食。",
+    dates: "Sep 1 - Sep 3",
+    datesZh: "9月1日 - 9月3日",
     duration: "3 Days",
     durationZh: "3天",
     groupSize: "4-6 Students",
     groupSizeZh: "4-6名学生",
-    pricePerPerson: "$220",
-    tags: ["Camping", "Nature", "Meditation"],
-    tagsZh: ["露营", "自然", "冥想"],
-    captain: { name: "Emma L.", school: "Stanford", avatar: "E" },
+    pricePerPerson: "¥980",
+    tags: ["Culture", "Nature", "Food"],
+    tagsZh: ["文化", "自然", "美食"],
+    captain: { name: "Emma W.", school: "Tongji University", avatar: "E" },
     members: [
-      { name: "Noah B.", school: "UC Berkeley", avatar: "N", status: "confirmed" },
+      { name: "Chris Z.", school: "NYU Shanghai", avatar: "C", status: "confirmed" },
     ],
     isUserCaptain: false,
     isUserMember: false,
@@ -217,7 +217,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
               <span className="text-lg font-bold text-accent block leading-none">
                 {trip.dates.split(" ")[1]}
               </span>
-              <span className="text-[11px] text-accent/80">{trip.dates.split(" ")[0]}</span>
+              <span className="text-[10px] text-accent/80">{trip.dates.split(" ")[0]}</span>
             </div>
           </div>
 
@@ -238,7 +238,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <Calendar className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {language === "en" ? "Duration" : "时长"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -251,7 +251,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <Users className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {language === "en" ? "Group Size" : "团队规模"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -264,7 +264,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <DollarSign className="w-4 h-4 text-accent" />
                 </div>
                 <div>
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {language === "en" ? "Per Person" : "每人"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">{trip.pricePerPerson}</p>
@@ -275,7 +275,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                   <MapPin className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {language === "en" ? "Transport" : "交通"}
                   </p>
                   <p className="text-xs font-semibold text-foreground">
@@ -291,7 +291,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
             {(language === "en" ? trip.tags : trip.tagsZh).map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] bg-primary/10 text-primary font-semibold px-3 py-1 rounded-full"
+                className="text-[10px] bg-primary/10 text-primary font-semibold px-3 py-1 rounded-full"
               >
                 {tag}
               </span>
@@ -353,7 +353,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
               <p className="text-[11px] text-muted-foreground">{trip.captain.school}</p>
             </div>
             {trip.isUserCaptain && (
-              <span className="text-[11px] bg-accent text-accent-foreground font-semibold px-2 py-1 rounded-full">
+              <span className="text-[10px] bg-accent text-accent-foreground font-semibold px-2 py-1 rounded-full">
                 {language === "en" ? "You" : "你"}
               </span>
             )}
@@ -384,10 +384,10 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
                 </div>
                 <div className="flex-1">
                   <p className="text-xs font-semibold text-foreground">{member.name}</p>
-                  <p className="text-[11px] text-muted-foreground">{member.school}</p>
+                  <p className="text-[10px] text-muted-foreground">{member.school}</p>
                 </div>
                 {member.status === "pending" ? (
-                  <span className="text-[11px] bg-accent/10 text-accent font-semibold px-2 py-1 rounded-full">
+                  <span className="text-[10px] bg-accent/10 text-accent font-semibold px-2 py-1 rounded-full">
                     {t("pending", language)}
                   </span>
                 ) : (
@@ -466,7 +466,7 @@ export function TripDetailScreen({ tripId, onBack, onOpenChat, language, isTopMa
       {/* Captain Management Modal */}
       {showManageModal && (
         <div className="fixed inset-0 bg-foreground/50 flex items-end justify-center z-50">
-          <div className="bg-card w-full max-w-[393px] rounded-t-3xl p-5 pb-[calc(32px+env(safe-area-inset-bottom))] max-h-[calc(100vh-64px)] overflow-y-auto">
+          <div className="bg-card w-full max-w-[393px] rounded-t-3xl p-5 pb-8">
             <div className="w-12 h-1 bg-muted rounded-full mx-auto mb-4" />
             <h2 className="text-lg font-bold text-foreground mb-4">{t("manageTrip", language)}</h2>
             

@@ -83,15 +83,15 @@ export function AppShell() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-background p-4">
-      <div className="relative w-full max-w-[393px] h-[min(852px,calc(100vh-2rem))] bg-card rounded-[3rem] shadow-2xl overflow-hidden border-[8px] border-foreground/10 flex flex-col">
+      <div className="relative w-full max-w-[393px] h-[852px] bg-card rounded-[3rem] shadow-2xl overflow-hidden border-[8px] border-foreground/10">
         {/* Status bar */}
-        <div className="flex items-center justify-between px-6 pt-3 pb-1 bg-card">
-          <span className="text-sm font-semibold text-foreground">9:41</span>
+        <div className="flex items-center justify-between px-8 pt-3 pb-1 bg-card">
+          <span className="text-xs font-semibold text-foreground">9:41</span>
           <div className="flex items-center gap-2">
             {showLanguageToggle && (
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary/50 text-[11px] font-medium text-foreground min-h-7"
+                className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/50 text-[10px] font-medium text-foreground"
                 aria-label="Toggle language"
               >
                 <Globe className="w-3 h-3" />
@@ -105,7 +105,7 @@ export function AppShell() {
         </div>
 
         {/* Screen content */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden">
+        <div className="h-[calc(100%-7rem)] overflow-y-auto overflow-x-hidden">
           {activeScreen === "signup" && (
             <SignupScreen onSubmit={handleSignup} language={language} />
           )}
@@ -157,7 +157,7 @@ export function AppShell() {
 
         {/* Bottom Navigation */}
         {showBottomNav && (
-          <div className="mt-auto w-full bg-card border-t border-border px-4 pt-2 pb-[calc(24px+env(safe-area-inset-bottom))]">
+          <div className="absolute bottom-0 left-0 right-0 bg-card border-t border-border px-4 pb-6 pt-2">
             <nav className="flex items-center justify-around">
               {tabs.map((tab) => {
                 const isActive = activeScreen === tab.id
@@ -168,7 +168,7 @@ export function AppShell() {
                     <button
                       key={tab.id}
                       onClick={() => setActiveScreen("create")}
-                      className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg -mt-5 z-10"
+                      className="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg -mt-6"
                       aria-label={t("createTrip", language)}
                     >
                       <Plus className="w-6 h-6" />
@@ -180,7 +180,7 @@ export function AppShell() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveScreen(tab.id)}
-                    className={`flex flex-col items-center justify-center gap-0.5 w-12 h-12 rounded-xl transition-colors ${
+                    className={`flex flex-col items-center gap-0.5 py-1 px-3 rounded-xl transition-colors ${
                       isActive
                         ? "text-primary"
                         : "text-muted-foreground"
@@ -189,7 +189,7 @@ export function AppShell() {
                     aria-current={isActive ? "page" : undefined}
                   >
                     <tab.icon className="w-5 h-5" />
-                    <span className="text-[11px] font-medium leading-none">{t(tab.labelKey, language)}</span>
+                    <span className="text-[10px] font-medium">{t(tab.labelKey, language)}</span>
                   </button>
                 )
               })}

@@ -32,8 +32,8 @@ interface ProfileScreenProps {
 }
 
 const DEFAULT_PROFILE = {
-  name: "Alex Williams",
-  school: "Stanford University",
+  name: "Alex Chen",
+  school: "NYU Shanghai",
   year: "Junior",
   bio: "Outdoor enthusiast and adventure seeker. Love meeting new people on the trail!",
   bioZh: "户外运动爱好者和冒险者。喜欢在旅途中结识新朋友！",
@@ -50,8 +50,8 @@ const DEFAULT_PROFILE = {
     { name: "Top Rated", nameZh: "高评分", icon: Star, color: "bg-accent/10 text-accent" },
   ],
   upcomingTrips: [
-    { name: "Yellowstone Adventure", nameZh: "黄石公园探险", date: "Jun 15 - 20", dateZh: "6月15-20日", members: 8 },
-    { name: "Beach Bonfire Weekend", nameZh: "海滩篝火周末", date: "Aug 10 - 12", dateZh: "8月10-12日", members: 12 },
+    { name: "Zhangjiajie Adventure", nameZh: "张家界探险", date: "Jun 15 - 20", dateZh: "6月15-20日", members: 8 },
+    { name: "Bali Beach Retreat", nameZh: "巴厘岛度假", date: "Aug 10 - 16", dateZh: "8月10-16日", members: 12 },
   ],
 }
 
@@ -122,15 +122,15 @@ export function ProfileScreen({ userData, language, onToggleLanguage }: ProfileS
       <div className="grid grid-cols-3 gap-3 mb-5">
         <div className="bg-card rounded-xl p-3 text-center border border-border/50">
           <p className="text-lg font-bold text-primary">{DEFAULT_PROFILE.tripsCompleted}</p>
-          <p className="text-[11px] text-muted-foreground">{t("trips", language)}</p>
+          <p className="text-[10px] text-muted-foreground">{t("trips", language)}</p>
         </div>
         <div className="bg-card rounded-xl p-3 text-center border border-border/50">
           <p className="text-lg font-bold text-primary">{DEFAULT_PROFILE.companionsMatched}</p>
-          <p className="text-[11px] text-muted-foreground">{t("companions", language)}</p>
+          <p className="text-[10px] text-muted-foreground">{t("companions", language)}</p>
         </div>
         <div className="bg-card rounded-xl p-3 text-center border border-border/50">
           <p className="text-lg font-bold text-accent">{DEFAULT_PROFILE.fundsManaged}</p>
-          <p className="text-[11px] text-muted-foreground">{t("fundsManaged", language)}</p>
+          <p className="text-[10px] text-muted-foreground">{t("fundsManaged", language)}</p>
         </div>
       </div>
 
@@ -144,7 +144,7 @@ export function ProfileScreen({ userData, language, onToggleLanguage }: ProfileS
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl ${badge.color} bg-opacity-10`}
             >
               <badge.icon className="w-3.5 h-3.5" />
-              <span className="text-[11px] font-semibold">
+              <span className="text-[10px] font-semibold">
                 {language === "en" ? badge.name : badge.nameZh}
               </span>
             </div>
@@ -183,7 +183,7 @@ export function ProfileScreen({ userData, language, onToggleLanguage }: ProfileS
                 <p className="text-xs font-semibold text-foreground">
                   {language === "en" ? trip.name : trip.nameZh}
                 </p>
-                <p className="text-[11px] text-muted-foreground">
+                <p className="text-[10px] text-muted-foreground">
                   {language === "en" ? trip.date : trip.dateZh} &middot; {trip.members} {t("members", language)}
                 </p>
               </div>

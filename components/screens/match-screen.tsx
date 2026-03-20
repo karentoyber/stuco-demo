@@ -76,70 +76,70 @@ const getPreferenceQuestions = (language: Language) => [
 const MATCHED_TRIPS = [
   {
     id: "1",
-    title: "Yellowstone Adventure",
-    titleZh: "黄石公园探险",
-    location: "Yellowstone National Park, WY",
-    locationZh: "怀俄明州黄石国家公园",
-    image: "/images/trip-lakeside.jpg",
+    title: "Zhangjiajie Avatar Mountains",
+    titleZh: "张家界阿凡达仙境",
+    location: "Zhangjiajie, Hunan Province",
+    locationZh: "湖南省张家界市",
+    image: "/images/trip-mountain.jpg",
     dates: "Jun 15 - Jun 20",
     datesZh: "6月15日 - 6月20日",
     spots: 3,
-    price: "$280",
-    tags: ["Camping", "Hiking"],
-    tagsZh: ["露营", "徒步"],
+    price: "¥1,800",
+    tags: ["Hiking", "Photography"],
+    tagsZh: ["徒步", "摄影"],
     matchScore: 98,
-    captain: { name: "Sarah K.", school: "Stanford", avatar: "S" },
+    captain: { name: "Lily Z.", school: "NYU Shanghai", schoolZh: "上纽", avatar: "L" },
     members: 5,
   },
   {
     id: "2",
-    title: "Mountain Ridge Trek",
-    titleZh: "山脊徒步",
-    location: "Rocky Mountain NP, CO",
-    locationZh: "科罗拉多州落基山国家公园",
-    image: "/images/trip-mountain.jpg",
-    dates: "Jul 4 - Jul 8",
-    datesZh: "7月4日 - 7月8日",
+    title: "Tokyo & Mt. Fuji Explorer",
+    titleZh: "东京富士山探索",
+    location: "Tokyo & Hakone, Japan",
+    locationZh: "日本东京&箱根",
+    image: "/images/trip-city.jpg",
+    dates: "Jul 4 - Jul 10",
+    datesZh: "7月4日 - 7月10日",
     spots: 5,
-    price: "$195",
-    tags: ["Hiking", "Photography"],
-    tagsZh: ["徒步", "摄影"],
+    price: "¥5,500",
+    tags: ["City", "Mountain"],
+    tagsZh: ["城市", "山区"],
     matchScore: 92,
-    captain: { name: "Alex W.", school: "Santa Clara U", avatar: "A" },
+    captain: { name: "Kevin C.", school: "Fudan", schoolZh: "复旦", avatar: "K" },
     members: 3,
   },
   {
     id: "3",
-    title: "Beach Bonfire Weekend",
-    titleZh: "海滩篝火周末",
-    location: "Santa Cruz, CA",
-    locationZh: "加州圣克鲁斯",
+    title: "Bali Beach Retreat",
+    titleZh: "巴厘岛海滩度假",
+    location: "Bali, Indonesia",
+    locationZh: "印度尼西亚巴厘岛",
     image: "/images/trip-beach.jpg",
-    dates: "Aug 10 - Aug 12",
-    datesZh: "8月10日 - 8月12日",
+    dates: "Aug 10 - Aug 16",
+    datesZh: "8月10日 - 8月16日",
     spots: 4,
-    price: "$150",
+    price: "¥4,200",
     tags: ["Beach", "Surfing"],
     tagsZh: ["海滩", "冲浪"],
     matchScore: 85,
-    captain: { name: "Jordan P.", school: "UC Berkeley", avatar: "J" },
+    captain: { name: "Sophie L.", school: "SJTU", schoolZh: "交大", avatar: "S" },
     members: 8,
   },
   {
     id: "4",
-    title: "Forest Retreat Camp",
-    titleZh: "森林露营",
-    location: "Redwood National Park, CA",
-    locationZh: "加州红杉国家公园",
-    image: "/images/trip-forest.jpg",
-    dates: "Sep 1 - Sep 4",
-    datesZh: "9月1日 - 9月4日",
+    title: "Hangzhou West Lake & Tea",
+    titleZh: "杭州西湖茶文化之旅",
+    location: "Hangzhou, Zhejiang",
+    locationZh: "浙江省杭州市",
+    image: "/images/trip-lakeside.jpg",
+    dates: "Sep 1 - Sep 3",
+    datesZh: "9月1日 - 9月3日",
     spots: 2,
-    price: "$220",
-    tags: ["Camping", "Nature"],
-    tagsZh: ["露营", "自然"],
+    price: "¥980",
+    tags: ["Culture", "Nature"],
+    tagsZh: ["文化", "自然"],
     matchScore: 78,
-    captain: { name: "Emma L.", school: "Stanford", avatar: "E" },
+    captain: { name: "Emma W.", school: "Tongji", schoolZh: "同济", avatar: "E" },
     members: 4,
   },
 ]
@@ -352,13 +352,13 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                     <span className="text-xs font-bold text-primary">{topMatch.captain.avatar}</span>
                   </div>
                   <div>
-                    <p className="text-[11px] text-muted-foreground">{t("captain", language)}</p>
+                    <p className="text-[10px] text-muted-foreground">{t("captain", language)}</p>
                     <p className="text-xs font-semibold text-foreground">{topMatch.captain.name}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className="text-lg font-bold text-accent">{topMatch.price}</p>
-                  <p className="text-[11px] text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {topMatch.spots} {t("spotsAvailable", language)}
                   </p>
                 </div>
@@ -367,7 +367,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                 {(language === "en" ? topMatch.tags : topMatch.tagsZh).map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded-full"
+                    className="text-[10px] bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded-full"
                   >
                     {tag}
                   </span>
@@ -379,7 +379,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
           <div className="px-4 pb-4">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles className="w-3 h-3 text-accent" />
-              <span className="text-[11px] text-accent font-medium">
+              <span className="text-[10px] text-accent font-medium">
                 {t("firstComeFirstServe", language)}
               </span>
             </div>
@@ -414,7 +414,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                   loading={index === 0 ? "eager" : "lazy"}
                   className="object-cover"
                 />
-                <div className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-[11px] font-bold px-2 py-0.5 rounded-full">
+                <div className="absolute top-2 left-2 bg-primary/90 text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full">
                   {trip.matchScore}%
                 </div>
               </div>
@@ -430,9 +430,9 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                 </div>
                 <div className="flex items-center gap-2 mt-1.5">
                   <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-[11px] font-bold text-primary">{trip.captain.avatar}</span>
+                    <span className="text-[9px] font-bold text-primary">{trip.captain.avatar}</span>
                   </div>
-                  <span className="text-[11px] text-muted-foreground">
+                  <span className="text-[10px] text-muted-foreground">
                     {t("captain", language)}: {trip.captain.name}
                   </span>
                 </div>
@@ -440,7 +440,7 @@ export function MatchScreen({ onTripClick, language }: MatchScreenProps) {
                   <span className="text-xs font-bold text-accent">
                     {trip.price}/{language === "en" ? "person" : "人"}
                   </span>
-                  <span className="text-[11px] text-muted-foreground">
+                  <span className="text-[10px] text-muted-foreground">
                     {trip.spots} {t("spots", language)}
                   </span>
                 </div>

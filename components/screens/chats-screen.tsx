@@ -8,11 +8,11 @@ import { type Language, t } from "@/lib/translations"
 const TRIP_CHATS = [
   {
     id: "1",
-    tripName: "Yellowstone Adventure",
-    tripNameZh: "黄石公园探险",
-    tripImage: "/images/trip-lakeside.jpg",
-    lastMessage: "Sarah: Don't forget to pack layers!",
-    lastMessageZh: "Sarah: 别忘了带保暖衣物！",
+    tripName: "Zhangjiajie Adventure",
+    tripNameZh: "张家界探险",
+    tripImage: "/images/trip-mountain.jpg",
+    lastMessage: "Lily: Don't forget to pack layers!",
+    lastMessageZh: "Lily: 别忘了带保暖衣物！",
     timestamp: "2m ago",
     timestampZh: "2分钟前",
     unread: 3,
@@ -23,26 +23,26 @@ const TRIP_CHATS = [
   },
   {
     id: "2",
-    tripName: "Mountain Ridge Trek",
-    tripNameZh: "山脊徒步",
-    tripImage: "/images/trip-mountain.jpg",
-    lastMessage: "Alex: Who's driving?",
-    lastMessageZh: "Alex: 谁开车？",
+    tripName: "Tokyo & Mt. Fuji",
+    tripNameZh: "东京富士山",
+    tripImage: "/images/trip-city.jpg",
+    lastMessage: "Kevin: Anyone need help with visa?",
+    lastMessageZh: "Kevin: 有人需要签证帮助吗？",
     timestamp: "1h ago",
     timestampZh: "1小时前",
     unread: 0,
     members: 4,
     status: "upcoming" as const,
-    dates: "Jul 4 - Jul 8",
-    datesZh: "7月4日 - 7月8日",
+    dates: "Jul 4 - Jul 10",
+    datesZh: "7月4日 - 7月10日",
   },
   {
     id: "3",
-    tripName: "Beach Bonfire Weekend",
-    tripNameZh: "海滩篝火周末",
-    tripImage: "/images/trip-beach.jpg",
-    lastMessage: "Jordan: That was amazing!",
-    lastMessageZh: "Jordan: 太棒了！",
+    tripName: "Hangzhou West Lake",
+    tripNameZh: "杭州西湖",
+    tripImage: "/images/trip-lakeside.jpg",
+    lastMessage: "Emma: The tea was amazing!",
+    lastMessageZh: "Emma: 茶太好喝了！",
     timestamp: "2d ago",
     timestampZh: "2天前",
     unread: 0,
@@ -56,10 +56,10 @@ const TRIP_CHATS = [
 const CHAT_MESSAGES = [
   {
     id: "1",
-    sender: "Sarah K.",
-    avatar: "S",
-    message: "Hey everyone! Super excited for this trip!",
-    messageZh: "大家好！超级期待这次旅行！",
+    sender: "Lily Z.",
+    avatar: "L",
+    message: "Hey everyone! Super excited for Zhangjiajie!",
+    messageZh: "大家好！超级期待张家界之旅！",
     timestamp: "10:30 AM",
     isMe: false,
   },
@@ -75,8 +75,8 @@ const CHAT_MESSAGES = [
   },
   {
     id: "3",
-    sender: "Mike R.",
-    avatar: "M",
+    sender: "Kevin C.",
+    avatar: "K",
     message: "Just sent my share! Check the fund.",
     messageZh: "刚交了我的份额！看看资金。",
     timestamp: "10:35 AM",
@@ -84,19 +84,19 @@ const CHAT_MESSAGES = [
   },
   {
     id: "4",
-    sender: "Sarah K.",
-    avatar: "S",
-    message: "Don't forget to pack layers! It gets cold at night in Yellowstone.",
-    messageZh: "别忘了带保暖衣物！黄石公园晚上很冷。",
+    sender: "Lily Z.",
+    avatar: "L",
+    message: "Don't forget to pack layers! It gets cold on the mountains.",
+    messageZh: "别忘了带保暖衣物！山上很冷。",
     timestamp: "10:40 AM",
     isMe: false,
   },
   {
     id: "5",
-    sender: "Jess T.",
-    avatar: "J",
-    message: "Good tip! Also bringing my camera",
-    messageZh: "好建议！我也带相机",
+    sender: "Sophie L.",
+    avatar: "S",
+    message: "Good tip! Also bringing my camera for the glass skywalks!",
+    messageZh: "好建议！我也带相机拍玻璃栈道！",
     timestamp: "10:42 AM",
     isMe: false,
   },
@@ -195,7 +195,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                     <h3 className="text-sm font-bold text-foreground truncate pr-2">
                       {language === "en" ? chat.tripName : chat.tripNameZh}
                     </h3>
-                    <span className="text-xs text-muted-foreground flex-shrink-0">
+                    <span className="text-[10px] text-muted-foreground flex-shrink-0">
                       {language === "en" ? chat.timestamp : chat.timestampZh}
                     </span>
                   </div>
@@ -207,7 +207,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                       {language === "en" ? chat.lastMessage : chat.lastMessageZh}
                     </p>
                     {chat.unread > 0 && (
-                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-xs font-bold flex items-center justify-center">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
                         {chat.unread}
                       </span>
                     )}
@@ -232,7 +232,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
       <div className="flex items-center gap-3 px-4 py-3 bg-card border-b border-border">
         <button
           onClick={() => setSelectedChat(null)}
-          className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center"
+          className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center"
           aria-label={t("back", language)}
         >
           <ArrowLeft className="w-4 h-4 text-foreground" />
@@ -250,7 +250,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
           <h2 className="text-sm font-bold text-foreground truncate">
             {language === "en" ? currentChat?.tripName : currentChat?.tripNameZh}
           </h2>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-[10px] text-muted-foreground">
             {currentChat?.members} {t("members", language)}
           </p>
         </div>
@@ -289,7 +289,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
             )}
             <div className={`max-w-[75%] ${msg.isMe ? "items-end" : ""}`}>
               {!msg.isMe && (
-                <p className="text-xs text-muted-foreground mb-0.5 ml-1">{msg.sender}</p>
+                <p className="text-[10px] text-muted-foreground mb-0.5 ml-1">{msg.sender}</p>
               )}
               <div
                 className={`px-3 py-2 rounded-2xl ${
@@ -302,7 +302,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
                   {language === "en" ? msg.message : msg.messageZh}
                 </p>
               </div>
-              <p className={`text-xs text-muted-foreground mt-0.5 ${msg.isMe ? "text-right mr-1" : "ml-1"}`}>
+              <p className={`text-[9px] text-muted-foreground mt-0.5 ${msg.isMe ? "text-right mr-1" : "ml-1"}`}>
                 {msg.timestamp}
               </p>
             </div>
@@ -313,7 +313,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
       {/* Message Input */}
       <div className="px-4 py-3 bg-card border-t border-border">
         <div className="flex items-center gap-2">
-          <button className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <button className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
             <ImageIcon className="w-4 h-4 text-muted-foreground" />
           </button>
           <div className="flex-1 bg-secondary rounded-2xl px-4 py-2.5">
@@ -328,7 +328,7 @@ export function ChatsScreen({ onOpenFund, language }: ChatsScreenProps) {
           </div>
           <button
             onClick={handleSendMessage}
-            className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0"
+            className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0"
             aria-label={language === "en" ? "Send message" : "发送消息"}
           >
             <Send className="w-4 h-4 text-primary-foreground" />

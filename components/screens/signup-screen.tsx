@@ -17,17 +17,16 @@ interface SignupScreenProps {
 }
 
 const SCHOOLS = [
-  "UC Berkeley",
-  "UCLA",
-  "Stanford University",
-  "USC",
-  "UC San Diego",
-  "UC Davis",
-  "UC Irvine",
-  "Cal Poly SLO",
-  "San Jose State",
-  "SF State",
-  "Other"
+  "NYU Shanghai | 上海纽约大学",
+  "Fudan University | 复旦大学",
+  "Shanghai Jiao Tong University | 上海交通大学",
+  "Tongji University | 同济大学",
+  "East China Normal University | 华东师范大学",
+  "Shanghai University | 上海大学",
+  "ShanghaiTech University | 上海科技大学",
+  "Duke Kunshan University | 昆山杜克大学",
+  "CEIBS | 中欧国际工商学院",
+  "Other | 其他"
 ]
 
 const GRAD_YEARS = ["2025", "2026", "2027", "2028", "2029"]
@@ -231,7 +230,7 @@ export function SignupScreen({ onSubmit, language }: SignupScreenProps) {
         </div>
 
         {/* Terms */}
-        <p className="text-xs text-muted-foreground text-center px-4">
+        <p className="text-[10px] text-muted-foreground text-center px-4">
           {t("termsText", language)}
         </p>
 

@@ -17,67 +17,67 @@ import {
 import { type Language, t } from "@/lib/translations"
 
 const FUND_DATA = {
-  tripName: "Yellowstone Adventure",
-  tripNameZh: "黄石公园探险",
-  totalBudget: 2240,
-  collected: 1680,
+  tripName: "Zhangjiajie Adventure",
+  tripNameZh: "张家界探险",
+  totalBudget: 14400,
+  collected: 10800,
   members: [
-    { name: "Alex W.", paid: 280, total: 280, status: "paid" as const, avatar: "A" },
-    { name: "Sarah K.", paid: 280, total: 280, status: "paid" as const, avatar: "S" },
-    { name: "Mike R.", paid: 280, total: 280, status: "paid" as const, avatar: "M" },
-    { name: "Jess T.", paid: 140, total: 280, status: "partial" as const, avatar: "J" },
-    { name: "Taylor L.", paid: 280, total: 280, status: "paid" as const, avatar: "T" },
-    { name: "Jordan P.", paid: 280, total: 280, status: "paid" as const, avatar: "J2" },
-    { name: "Casey M.", paid: 0, total: 280, status: "pending" as const, avatar: "C" },
-    { name: "Riley D.", paid: 140, total: 280, status: "partial" as const, avatar: "R" },
+    { name: "Alex C.", paid: 1800, total: 1800, status: "paid" as const, avatar: "A" },
+    { name: "Lily Z.", paid: 1800, total: 1800, status: "paid" as const, avatar: "L" },
+    { name: "Kevin C.", paid: 1800, total: 1800, status: "paid" as const, avatar: "K" },
+    { name: "Sophie L.", paid: 900, total: 1800, status: "partial" as const, avatar: "S" },
+    { name: "Emma W.", paid: 1800, total: 1800, status: "paid" as const, avatar: "E" },
+    { name: "Jason H.", paid: 1800, total: 1800, status: "paid" as const, avatar: "J" },
+    { name: "Mike W.", paid: 0, total: 1800, status: "pending" as const, avatar: "M" },
+    { name: "Rachel T.", paid: 900, total: 1800, status: "partial" as const, avatar: "R" },
   ],
   expenses: [
     {
       id: 1,
-      title: "Campsite Reservation",
-      titleZh: "营地预订",
-      amount: 640,
-      paidBy: "Alex W.",
+      title: "Hotel Reservation",
+      titleZh: "酒店预订",
+      amount: 4800,
+      paidBy: "Lily Z.",
       date: "Jun 5",
       dateZh: "6月5日",
       type: "expense" as const,
     },
     {
       id: 2,
-      title: "Gear Rental Deposit",
-      titleZh: "装备租赁押金",
-      amount: 320,
-      paidBy: "Sarah K.",
+      title: "Train Tickets (Shanghai-Zhangjiajie)",
+      titleZh: "火车票（上海-张家界）",
+      amount: 2400,
+      paidBy: "Kevin C.",
       date: "Jun 8",
       dateZh: "6月8日",
       type: "expense" as const,
     },
     {
       id: 3,
-      title: "Sarah K. - Contribution",
-      titleZh: "Sarah K. - 贡献",
-      amount: 280,
-      paidBy: "Sarah K.",
+      title: "Lily Z. - Contribution",
+      titleZh: "Lily Z. - 缴费",
+      amount: 1800,
+      paidBy: "Lily Z.",
       date: "Jun 10",
       dateZh: "6月10日",
       type: "income" as const,
     },
     {
       id: 4,
-      title: "Mike R. - Contribution",
-      titleZh: "Mike R. - 贡献",
-      amount: 280,
-      paidBy: "Mike R.",
+      title: "Kevin C. - Contribution",
+      titleZh: "Kevin C. - 缴费",
+      amount: 1800,
+      paidBy: "Kevin C.",
       date: "Jun 10",
       dateZh: "6月10日",
       type: "income" as const,
     },
     {
       id: 5,
-      title: "Food & Supplies",
-      titleZh: "食物和用品",
-      amount: 200,
-      paidBy: "Mike R.",
+      title: "Park Entry Tickets",
+      titleZh: "景区门票",
+      amount: 1600,
+      paidBy: "Alex C.",
       date: "Jun 12",
       dateZh: "6月12日",
       type: "expense" as const,
@@ -123,7 +123,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs opacity-80">{t("totalCollected", language)}</p>
-            <p className="text-3xl font-bold mt-0.5">${FUND_DATA.collected.toLocaleString()}</p>
+            <p className="text-3xl font-bold mt-0.5">¥{FUND_DATA.collected.toLocaleString()}</p>
           </div>
           <button
             onClick={() => setShowQR(!showQR)}
@@ -138,7 +138,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
         <div className="mt-4">
           <div className="flex items-center justify-between text-xs opacity-80 mb-1.5">
             <span>
-              ${FUND_DATA.collected} / ${FUND_DATA.totalBudget}
+              ¥{FUND_DATA.collected.toLocaleString()} / ¥{FUND_DATA.totalBudget.toLocaleString()}
             </span>
             <span>{Math.round(progress)}%</span>
           </div>
@@ -160,7 +160,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
           <div className="flex items-center gap-1.5">
             <DollarSign className="w-3.5 h-3.5 opacity-80" />
             <span className="text-xs opacity-80">
-              $280/{language === "en" ? "person" : "人"}
+              ¥1,800/{language === "en" ? "person" : "人"}
             </span>
           </div>
         </div>
@@ -315,8 +315,8 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
                           }}
                         />
                       </div>
-                      <span className="text-xs text-muted-foreground min-w-[60px] text-right">
-                        ${member.paid}/${member.total}
+                      <span className="text-[10px] text-muted-foreground min-w-[80px] text-right">
+                        ¥{member.paid.toLocaleString()}/¥{member.total.toLocaleString()}
                       </span>
                     </div>
                   </div>
@@ -352,7 +352,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
               {t("recentTransactions", language)}
             </h2>
             <button 
-              className="w-9 h-9 rounded-full bg-primary flex items-center justify-center" 
+              className="w-7 h-7 rounded-full bg-primary flex items-center justify-center" 
               aria-label={t("addExpense", language)}
             >
               <Plus className="w-3.5 h-3.5 text-primary-foreground" />
@@ -380,7 +380,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
                   <p className="text-xs font-semibold text-foreground">
                     {language === "en" ? expense.title : expense.titleZh}
                   </p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-[10px] text-muted-foreground">
                     {expense.paidBy} &middot; {language === "en" ? expense.date : expense.dateZh}
                   </p>
                 </div>
@@ -389,7 +389,7 @@ export function FundScreen({ onBack, language }: FundScreenProps) {
                     expense.type === "expense" ? "text-accent" : "text-primary"
                   }`}
                 >
-                  {expense.type === "expense" ? "-" : "+"}${expense.amount}
+                  {expense.type === "expense" ? "-" : "+"}¥{expense.amount.toLocaleString()}
                 </span>
               </div>
             ))}
